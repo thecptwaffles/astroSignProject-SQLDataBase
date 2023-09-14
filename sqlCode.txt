@@ -1,0 +1,20 @@
+-- Assuming you have a table called 'people' with a 'birthdate' column
+-- Replace 'people' and 'birthdate' with your actual table and column names
+
+SELECT
+    CASE
+        WHEN MONTH(birthdate) = 1 AND DAY(birthdate) >= 20 OR MONTH(birthdate) = 2 AND DAY(birthdate) <= 18 THEN 'Aquarius'
+        WHEN MONTH(birthdate) = 2 AND DAY(birthdate) >= 19 OR MONTH(birthdate) = 3 AND DAY(birthdate) <= 20 THEN 'Pisces'
+        WHEN MONTH(birthdate) = 3 AND DAY(birthdate) >= 21 OR MONTH(birthdate) = 4 AND DAY(birthdate) <= 19 THEN 'Aries'
+        WHEN MONTH(birthdate) = 4 AND DAY(birthdate) >= 20 OR MONTH(birthdate) = 5 AND DAY(birthdate) <= 20 THEN 'Taurus'
+        WHEN MONTH(birthdate) = 5 AND DAY(birthdate) >= 21 OR MONTH(birthdate) = 6 AND DAY(birthdate) <= 20 THEN 'Gemini'
+        WHEN MONTH(birthdate) = 6 AND DAY(birthdate) >= 21 OR MONTH(birthdate) = 7 AND DAY(birthdate) <= 22 THEN 'Cancer'
+        WHEN MONTH(birthdate) = 7 AND DAY(birthdate) >= 23 OR MONTH(birthdate) = 8 AND DAY(birthdate) <= 22 THEN 'Leo'
+        WHEN MONTH(birthdate) = 8 AND DAY(birthdate) >= 23 OR MONTH(birthdate) = 9 AND DAY(birthdate) <= 22 THEN 'Virgo'
+        WHEN MONTH(birthdate) = 9 AND DAY(birthdate) >= 23 OR MONTH(birthdate) = 10 AND DAY(birthdate) <= 22 THEN 'Libra'
+        WHEN MONTH(birthdate) = 10 AND DAY(birthdate) >= 23 OR MONTH(birthdate) = 11 AND DAY(birthdate) <= 21 THEN 'Scorpio'
+        WHEN MONTH(birthdate) = 11 AND DAY(birthdate) >= 22 OR MONTH(birthdate) = 12 AND DAY(birthdate) <= 21 THEN 'Sagittarius'
+        ELSE 'Capricorn'
+    END AS zodiac_sign
+FROM
+    people;
